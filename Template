@@ -1,0 +1,257 @@
+AWSTemplateFormatVersion: 2010-09-09
+Metadata:
+
+  'AWS::CloudFormation::Designer':
+    a589d703-063d-4940-b6cc-10b3f65c5aba:
+      size:
+        width: 2500
+        height: 1470
+      position:
+        x: -2620
+        'y': -1000
+      z: 1
+      embeds:
+        - d5ed2644-3f5f-4eab-97b7-458e3cbd9f60
+        - eb3bbcd4-42e5-4576-bc53-7eef0eb8d942
+        - 4db26679-be57-438d-bc4d-6f9d621a979f
+    eb3bbcd4-42e5-4576-bc53-7eef0eb8d942:
+      size:
+        width: 450
+        height: 720
+      position:
+        x: -1850
+        'y': -880
+      z: 2
+      parent: a589d703-063d-4940-b6cc-10b3f65c5aba
+      embeds:
+        - fa4b1b3b-6c2c-4430-9432-a06384e24e64
+      iscontainedinside:
+        - a589d703-063d-4940-b6cc-10b3f65c5aba
+        - a589d703-063d-4940-b6cc-10b3f65c5aba
+    fa4b1b3b-6c2c-4430-9432-a06384e24e64:
+      size:
+        width: 60
+        height: 60
+      position:
+        x: -1730
+        'y': -490
+      z: 3
+      parent: eb3bbcd4-42e5-4576-bc53-7eef0eb8d942
+      embeds: []
+      isassociatedwith:
+        - 760a6207-23d4-4647-bf13-2b43b82ac3b7
+        - d5ed2644-3f5f-4eab-97b7-458e3cbd9f60
+      iscontainedinside:
+        - eb3bbcd4-42e5-4576-bc53-7eef0eb8d942
+        - eb3bbcd4-42e5-4576-bc53-7eef0eb8d942
+    4db26679-be57-438d-bc4d-6f9d621a979f:
+      size:
+        width: 550
+        height: 590
+      position:
+        x: -860
+        'y': -790
+      z: 2
+      parent: a589d703-063d-4940-b6cc-10b3f65c5aba
+      embeds: []
+      iscontainedinside:
+        - a589d703-063d-4940-b6cc-10b3f65c5aba
+    f249c0a1-dba5-4f6d-8e43-3282bfa0d4ba:
+      size:
+        width: 2050
+        height: 1400
+      position:
+        x: 280
+        'y': -960
+      z: 1
+      embeds:
+        - 3ab30af9-6107-4239-8f3c-433d39da7ebc
+        - 1745b2e0-8d3e-4126-87f8-eef795e386fe
+        - 577ee1b6-017a-453c-9ae3-2c0a72a676fd
+    1745b2e0-8d3e-4126-87f8-eef795e386fe:
+      size:
+        width: 520
+        height: 500
+      position:
+        x: 480
+        'y': -840
+      z: 2
+      parent: f249c0a1-dba5-4f6d-8e43-3282bfa0d4ba
+      embeds:
+        - 9a9bc3ad-4377-4616-aac7-4dceafecbeb4
+      iscontainedinside:
+        - f249c0a1-dba5-4f6d-8e43-3282bfa0d4ba
+        - f249c0a1-dba5-4f6d-8e43-3282bfa0d4ba
+    577ee1b6-017a-453c-9ae3-2c0a72a676fd:
+      size:
+        width: 400
+        height: 520
+      position:
+        x: 1750
+        'y': -830
+      z: 2
+      parent: f249c0a1-dba5-4f6d-8e43-3282bfa0d4ba
+      embeds: []
+      iscontainedinside:
+        - f249c0a1-dba5-4f6d-8e43-3282bfa0d4ba
+        - f249c0a1-dba5-4f6d-8e43-3282bfa0d4ba
+    d5ed2644-3f5f-4eab-97b7-458e3cbd9f60:
+      size:
+        width: 60
+        height: 60
+      position:
+        x: -2180
+        'y': -520
+      z: 2
+      parent: a589d703-063d-4940-b6cc-10b3f65c5aba
+      embeds: []
+      iscontainedinside:
+        - a589d703-063d-4940-b6cc-10b3f65c5aba
+    3ab30af9-6107-4239-8f3c-433d39da7ebc:
+      size:
+        width: 60
+        height: 60
+      position:
+        x: 1340
+        'y': -710
+      z: 2
+      parent: f249c0a1-dba5-4f6d-8e43-3282bfa0d4ba
+      embeds: []
+      iscontainedinside:
+        - f249c0a1-dba5-4f6d-8e43-3282bfa0d4ba
+    9a9bc3ad-4377-4616-aac7-4dceafecbeb4:
+      size:
+        width: 60
+        height: 60
+      position:
+        x: 600
+        'y': -720
+      z: 3
+      parent: 1745b2e0-8d3e-4126-87f8-eef795e386fe
+      embeds: []
+      isassociatedwith:
+        - 3ab30af9-6107-4239-8f3c-433d39da7ebc
+      iscontainedinside:
+        - 1745b2e0-8d3e-4126-87f8-eef795e386fe
+Description: >-
+  In this cloudformation temlate: I created two vpcs in the same region and each vpc have one public subnet and one private subnet.
+  In private subnets I launched one ec2 instance.
+  
+Parameters:
+  KeyName:
+    Description: Name of an existing EC2 KeyPair to enable SSH access to the instance
+    Type: 'AWS::EC2::KeyPair::KeyName'
+    ConstraintDescription: must be the name of an existing EC2 KeyPair.
+  InstanceType:
+    Description: EC2 instance
+    Type: String
+    Default: t2.micro
+    AllowedValues:
+      - t2.nano
+      - t2.micro
+      - t2.small
+      - t2.medium
+      - t2.large
+      - t2.xlarge
+      - t2.2xlarge
+      - t3.nano
+      - t3.micro
+      - t3.small
+      - t3.medium
+      - t3.large
+      - t3.xlarge
+      - t3.2xlarge
+    ConstraintDescription: must be a valid EC2 instance type.
+  SSHLocationforInstancesinVPC1:
+    Description: The IP address range that can be used to SSH to the EC2 instances
+    Type: String
+    MinLength: 9
+    MaxLength: 18
+    Default: 0.0.0.0/0
+  SSHLocationforInstancesinVPC2:
+    Description: The IP address range that can be used to SSH to the EC2 instances
+    Type: String
+    MinLength: 9
+    MaxLength: 18
+    Default: 0.0.0.0/0
+    AllowedPattern: '(\d{1,3})\.(\d{1,3})\.(\d{1,3})\.(\d{1,3})/(\d{1,2})'
+    ConstraintDescription: must be a valid IP CIDR range of the form x.x.x.x/x.
+  LatestAmiId:
+    Type: 'AWS::SSM::Parameter::Value<AWS::EC2::Image::Id>'
+    Default: /aws/service/ami-amazon-linux-latest/amzn2-ami-hvm-x86_64-gp2
+Resources:
+  VPC1:
+    Type: 'AWS::EC2::VPC'
+    Properties:
+      CidrBlock: 192.168.0.0/16
+
+  VPC2:
+    Type: 'AWS::EC2::VPC'
+    Properties:
+      CidrBlock: 172.16.0.0/16
+    
+  publicsubnetinVPC1:
+    Type: 'AWS::EC2::Subnet'
+    Properties:
+      VpcId: !Ref VPC1
+      CidrBlock: 192.168.0.0/24
+    
+  privatesubnetinVPC1:
+    Type: 'AWS::EC2::Subnet'
+    Properties:
+      VpcId: !Ref VPC1
+      CidrBlock: 192.168.1.0/24
+
+  publicsubnetinVPC2:
+    Type: 'AWS::EC2::Subnet'
+    Properties:
+      VpcId: !Ref VPC2
+      CidrBlock: 172.16.0.0/24
+
+  privatesubnetinVPC2:
+    Type: 'AWS::EC2::Subnet'
+    Properties:
+      VpcId: !Ref VPC2
+      CidrBlock: 172.16.1.0/24
+    
+  SGVPC1:
+    Type: 'AWS::EC2::SecurityGroup'
+    Properties:
+      VpcId: !Ref VPC1
+      GroupDescription: Enable SSH access via port 22
+      SecurityGroupIngress:
+        - IpProtocol: tcp
+          FromPort: 22
+          ToPort: 22
+          CidrIp: 192.168.1.0/24
+    
+  SGVPC2:
+    Type: 'AWS::EC2::SecurityGroup'
+    Properties:
+      VpcId: !Ref VPC2
+      GroupDescription: Enable SSH access via port 22
+      SecurityGroupIngress:
+        - IpProtocol: tcp
+          FromPort: 22
+          ToPort: 22
+          CidrIp: 172.16.1.0/24
+  MYINSTANCEINVPC1:
+    Type: 'AWS::EC2::Instance'
+    Properties:
+      InstanceType: !Ref InstanceType
+      SubnetId: !Ref privatesubnetinVPC1
+      KeyName: !Ref KeyName
+      ImageId: !Ref LatestAmiId
+      SecurityGroupIds:
+        - !Ref SGVPC1
+
+  MYINSTANCEINVPC2:
+    Type: 'AWS::EC2::Instance'
+    Properties:
+      InstanceType: !Ref InstanceType
+      SubnetId: !Ref privatesubnetinVPC2
+      KeyName: !Ref KeyName
+      ImageId: !Ref LatestAmiId
+      SecurityGroupIds:
+        - !Ref SGVPC2
+
